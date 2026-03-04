@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phúc Thành ICT - Giải pháp Hạ tầng & Chuyển đổi Số</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Giữ nguyên toàn bộ Style của bạn */
+        body {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #343a40; 
+            background-color: #ffffff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+            color: purple;
+        }
+
+        a {
+            text-decoration: none;
+            color: purple;
+            font-size: 20px;
+        }
+
+        a:hover {
+            color: blue;
+        }
+
+        h1, h2, h3 {
+            color: purple;
+        }
+
+        .bg-light {
+            background-color: #f8f9fa; 
+        }
+
+        .continuous-area {
+             background: url('https://img.freepik.com/free-photo/white-cloud-blue-sky-sea_74190-4488.jpg?semt=ais_hybrid&w=740&q=80');
+             background-repeat: no-repeat;
+             background-size: cover;
+        }
+
+        .continuous-area h2,
+        .continuous-area h3,
+        .continuous-area p,
+        .continuous-area ul,
+        .continuous-area li {
+            color: purple;
+        }
+        
+        .continuous-area .solution-item i {
+            color: #0056b3; 
+        }
+
+        header {
+            background: url('https://wallpapers.com/images/hd/belarus-clear-sky-i3hg2vmwf0lcn125.jpg') no-repeat center center/cover;
+            color: var(--white);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 120px; 
+            width: 200px; 
+            display: block;
+        }
+
+        nav a {
+            margin-left: 20px;
+            font-weight: 500;
+            padding: 10px 0;
+            transition: color 0.3s;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+
+        .lang-button {
+            background-color: transparent;
+            border: none;
+            color: purple;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: bold;
+        }
+        
+        .lang-button:hover {
+             color: blue;
+             background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .lang-button.active {
+            color: blue;
+            background-color: lightskyblue;
+        }
+
+        .hero {
+            background: url('https://wallpapers.com/images/featured/4k-laptop-yn553k4gdhpc4hlh.jpg') no-repeat center center/cover;
+            color: lightskyblue;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: blue;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: purple;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: lightskyblue;
+        }
+
+        .solutions-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .solution-grid {
+            display: flex;
+            gap: 30px;
+            text-align: left;
+        }
+
+        .solution-item {
+            flex: 1;
+            background-color: white; 
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid #0056b3;
+        }
+
+        .solution-item i {
+            font-size: 2.5em;
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+
+        .solution-item ul {
+            list-style-type: '✔️ '; 
+            padding-left: 20px;
+            line-height: 2;
+        }
+
+        .client-partner-section {
+            padding: 40px 0; 
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px 0;
+        }
+
+        .logo-track {
+            display: flex;
+            width: calc(250px * 14); 
+            animation: scroll-left 30s linear infinite;
+        }
+
+        .logo-track:hover {
+            animation-play-state: paused;
+        }
+
+        .logo-track img {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            margin: 0 35px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .logo-track img:hover {
+            opacity: 1;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-250px * 7)); }
+        }
+
+        .about-us {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+
+        footer {
+            background: url('https://wallpapers.com/images/hd/belarus-clear-sky-i3hg2vmwf0lcn125.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 40px 0 10px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #495057;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            color: purple;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: blue;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 0.9em;
+            color: purple;
+        }
+
+        #chatbot-container { position: fixed; bottom: 20px; right: 20px; z-index: 1100; }
+        #chatbot-toggle-btn { background-color: purple; color: white; width: 60px; height: 60px; border-radius: 50%; border: none; cursor: pointer; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); font-size: 1.5em; }
+        #chatbot-window { width: 350px; height: 450px; background-color: white; border: 1px solid #ccc; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); display: none; flex-direction: column; margin-bottom: 10px; overflow: hidden; }
+        #chatbot-header { background-color: purple; color: white; padding: 10px; font-weight: bold; text-align: center; }
+        #chatbot-messages { flex-grow: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background-color: #f8f9fa; }
+        .message { max-width: 80%; padding: 8px 12px; border-radius: 15px; line-height: 1.4; }
+        .bot-message { align-self: flex-start; background-color: lightskyblue; color: #343a40; border-bottom-left-radius: 0; }
+        .user-message { align-self: flex-end; background-color: purple; color: white; border-bottom-right-radius: 0; }
+        #chatbot-input-container { display: flex; padding: 10px; border-top: 1px solid #ccc; }
+        #chatbot-input { flex-grow: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-right: 5px; }
+        #chatbot-send-btn { background-color: purple; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; }
+
+        @media (max-width: 768px) {
+            .nav-content { flex-direction: column; }
+            nav { margin-top: 10px; }
+            .solution-grid { flex-direction: column; }
+        }
+    </style>
+</head>
+<body onload="setLanguage('vi')"> 
+    <header>
+        <div class="container nav-content">
+            <div class="logo">
+                <a href="https://phucthanhgroup.com/" target="_blank">
+                    <img src="https://cdn.bitrix24.com/b28854747/landing/654/654ebc9ae06f9608f25efb83a9fbfb49/logo_removebg_preview_1x.png" alt="logo">
+                </a>
+            </div>
+            <nav>
+                <a href="https://phucthanhgroup.com/" data-lang-key="nav_main">Trang Chủ</a>
+                <a href="#gioithieu" data-lang-key="nav_about">Giới Thiệu</a>
+                <a href="#giaiphap" data-lang-key="nav_solutions">Giải Pháp</a>
+                <a href="#khachhang" data-lang-key="nav_customers">Khách Hàng</a>
+                <a href="#doitac" data-lang-key="nav_partners">Đối Tác</a>
+                
+                 <div class="language-switcher">
+                    <button class="lang-button active" onclick="setLanguage('vi')" data-lang="vi">VI</button>
+                    <button class="lang-button" onclick="setLanguage('en')" data-lang="en">EN</button>
+                    <button class="lang-button" onclick="setLanguage('zh')" data-lang="zh">中文</button>
+                    <button class="lang-button" onclick="setLanguage('ko')" data-lang="ko">한</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="gioithieu" class="hero">
+            <div class="container">
+                <a href="#giaiphap" class="cta-button" data-lang-key="hero_cta">Xem Giải Pháp Của Chúng Tôi</a>
+            </div>
+        </section>
+
+         <section class="about-us bg-light">
+            <div class="container">
+                <h2 style="font-size: 35px" data-lang-key="about_title">Về Phúc Thành ICT</h2>
+               <p style="font-size: 20px" data-lang-key="about_description">ICT là một trong các lĩnh vực hoạt động chủ chốt của Phúc Thành Group. Chúng tôi cung cấp các giải pháp hạ tầng công nghệ hiện đại, an toàn và hiệu quả, góp phần nâng cao năng lực vận hành và thúc đẩy chuyển đổi số cho doanh nghiệp.</p>
+            </div>
+        </section>
+        
+        <section class="continuous-area">
+            <section id="giaiphap" class="solutions-section">
+                <div class="container">
+                    <h2 data-lang-key="solutions_title">Các Giải Pháp Công Nghệ</h2>
+                    <div class="solution-grid">
+                        <div class="solution-item">
+                            <i class="fas fa-globe-americas"></i>
+                            <h3 data-lang-key="solution_infra_title">Giải pháp Hạ tầng - Infrastructure</h3>
+                            <p data-lang-key="solution_infra_desc">Cung cấp các giải pháp tối ưu hóa vận hành, quản lý cơ sở hạ tầng.</p>
+                            <ul>
+                                <li data-lang-key="solution_infra_list_1">Giải pháp quản lý năng lượng thông minh</li>
+                                <li data-lang-key="solution_infra_list_2">Hệ thống mạng lưới và lưu trữ (Server/Storage)</li>
+                                <li data-lang-key="solution_infra_list_3">Bảo mật và an toàn dữ liệu</li>
+                                <li data-lang-key="solution_infra_list_4">Tích hợp hệ thống lớn</li>
+                            </ul>
+                        </div>
+                        <div class="solution-item">
+                            <i class="fas fa-rocket"></i>
+                            <h3 data-lang-key="solution_dt_title">Giải pháp Chuyển đổi Số - Digital Transformation 4.0</h3>
+                            <p data-lang-key="solution_dt_desc">Phát triển các sản phẩm, dịch vụ theo xu hướng công nghệ, giúp doanh nghiệp tăng trưởng và mở rộng kinh doanh.</p>
+                            <ul>
+                                <li data-lang-key="solution_dt_list_1">Hệ thống Thương mại điện tử (E-commerce) toàn diện</li>
+                                <li data-lang-key="solution_dt_list_2">Phần mềm quản trị doanh nghiệp (ERP/CRM)</li>
+                                <li data-lang-key="solution_dt_list_3">Ứng dụng công nghệ AI/Big Data</li>
+                                <li data-lang-key="solution_dt_list_4">Tư vấn và triển khai chuyển đổi số</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="khachhang" class="client-partner-section">
+                <div class="container">
+                    <h2 data-lang-key="customers_title">Khách Hàng Tiêu Biểu</h2>
+                    <p data-lang-key="customers_desc">Đã triển khai thành công nhiều dự án lớn cho các khách hàng chiến lược trong và ngoài nước.</p>
+                </div>
+                <div class="slider-wrapper">
+                    <div class="logo-track">
+                        <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/6/6d/Botuphap.svg/250px-Botuphap.svg.png" alt="Client">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Emblem_of_Vietnam.svg" alt="Client">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJzBA9kra2lq5L_o-8e70PELPNvcgZvWny8Q&s" alt="Client">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJkbU071duMDe0UMJ4R8S-9h2WuwysW46FfA&s" alt="Client">
+                        <img src="https://cdn.tgdd.vn/Files/2021/01/07/1318645/logo-1_600x600.jpg" alt="Client">
+                        <img src="https://inkythuatso.com/uploads/images/2021/12/logo-abbank-inkythuatso-07-15-01-34.jpg" alt="Client">
+                        <img src="https://icolor.vn/wp-content/uploads/2024/08/Logo-Agribank-2.png" alt="Client">
+                    </div>
+                </div>
+            </section>
+
+            <section id="doitac" class="client-partner-section">
+                <div class="container">
+                    <h2 style="color: purple" data-lang-key="partners_title">Đối Tác Chiến Lược</h2>
+                </div>
+                <div class="slider-wrapper">
+                    <div class="logo-track" style="animation-direction: reverse; animation-duration: 25s;"> 
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dell_Logo.svg/480px-Dell_Logo.svg.png" alt="Partner">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Hewlett_Packard_Enterprise_logo_2025.svg/2560px-Hewlett_Packard_Enterprise_logo_2025.svg.png" alt="Partner">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lenovo_logo_2015.svg/1024px-Lenovo_logo_2015.svg.png" alt="Partner">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/ZTE-logo.svg/640px-ZTE-logo.svg.png" alt="Partner">
+                        <img src="https://svtech.com.vn/wp-content/uploads/2023/04/NetApp-logo.png" alt="Partner">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/2560px-Cisco_logo_blue_2016.svg.png" alt="Partner">
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer id="lienhe">
+        <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3 data-lang-key="footer_contact_title">Liên Hệ</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-lang-key="footer_address">Địa chỉ: Tầng 3 - 51 Lê Đại Hành, Hai Bà Trưng, Hà Nội</span></p>
+                    <p><i class="fas fa-phone-alt"></i> <span data-lang-key="footer_phone">Điện thoại: (024) 3976 3357</span></p>
+                    <p><i class="fas fa-envelope"></i> <span data-lang-key="footer_email">Email: info@phucthanhgroup.com</span></p>
+                </div>
+            </div>
+            <div class="copyright">
+                 <p>&copy; <span id="year"></span> PHUC THANH VIETNAM JSC.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="chatbot-container">
+        <div id="chatbot-window">
+            <div id="chatbot-header" data-lang-key="chat_header">Phúc Thành ICT Chatbot</div>
+            <div id="chatbot-messages">
+                </div>
+            <div id="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Nhập câu hỏi của bạn...">
+                <button id="chatbot-send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button id="chatbot-toggle-btn"><i class="fas fa-comments"></i></button>
+    </div>
+
+    <script>
+        const translations = {
+            'vi': {
+                'nav_main': 'Trang Chủ', 'nav_about': 'Giới Thiệu', 'nav_solutions': 'Giải Pháp', 'nav_customers': 'Khách Hàng', 'nav_partners': 'Đối Tác', 'hero_cta': 'Xem Giải Pháp Của Chúng Tôi',
+                'about_title': 'Về Phúc Thành ICT', 
+                'about_description': 'ICT là một trong các lĩnh vực hoạt động chủ chốt của Phúc Thành Group. Chúng tôi cung cấp các giải pháp hạ tầng công nghệ hiện đại, an toàn và hiệu quả, góp phần nâng cao năng lực vận hành và thúc đẩy chuyển đổi số cho doanh nghiệp.',
+                'solutions_title': 'Các Giải Pháp Công Nghệ', 
+                'solution_infra_title': 'Giải pháp Hạ tầng - Infrastructure', 
+                'solution_infra_desc': 'Cung cấp các giải pháp tối ưu hóa vận hành, quản lý cơ sở hạ tầng.',
+                'solution_infra_list_1': 'Giải pháp quản lý năng lượng thông minh',
+                'solution_infra_list_2': 'Hệ thống mạng lưới và lưu trữ (Server/Storage)',
+                'solution_infra_list_3': 'Bảo mật và an toàn dữ liệu',
+                'solution_infra_list_4': 'Tích hợp hệ thống lớn',
+                'solution_dt_title': 'Giải pháp Chuyển đổi Số - Digital Transformation 4.0',
+                'solution_dt_desc': 'Phát triển các sản phẩm, dịch vụ theo xu hướng công nghệ, giúp doanh nghiệp tăng trưởng và mở rộng kinh doanh.',
+                'solution_dt_list_1': 'Hệ thống Thương mại điện tử (E-commerce) toàn diện',
+                'solution_dt_list_2': 'Phần mềm quản trị doanh nghiệp (ERP/CRM)',
+                'solution_dt_list_3': 'Ứng dụng công nghệ AI/Big Data',
+                'solution_dt_list_4': 'Tư vấn và triển khai chuyển đổi số',
+                'customers_title': 'Khách Hàng Tiêu Biểu', 
+                'customers_desc': 'Đã triển khai thành công nhiều dự án lớn cho các khách hàng chiến lược trong và ngoài nước.', 
+                'partners_title': 'Đối Tác Chiến Lược',
+                'footer_contact_title': 'Liên Hệ', 
+                'footer_address': 'Địa chỉ: Tầng 3 - 51 Lê Đại Hành, Hai Bà Trưng, Hà Nội', 
+                'footer_phone': 'Điện thoại: (024) 3976 3357', 
+                'footer_email': 'Email: info@phucthanhgroup.com',
+                'chat_header': 'Phúc Thành ICT Chatbot', 
+                'chat_welcome': 'Chào mừng bạn đến với Phúc Thành ICT! Bạn cần hỗ trợ gì về giải pháp Hạ tầng hoặc Chuyển đổi số?', 
+                'chat_placeholder': 'Nhập câu hỏi của bạn...',
+                'chat_response': 'Cảm ơn bạn, chuyên viên sẽ sớm phản hồi. Tel: (024) 3976 3357 Mail: info@phucthanhgroup.com'
+            },
+            'en': {
+                'nav_main': 'Homepage', 'nav_about': 'About Us', 'nav_solutions': 'Solutions', 'nav_customers': 'Customers', 'nav_partners': 'Partners', 'hero_cta': 'View Our Solutions',
+                'about_title': 'About Phuc Thanh ICT', 
+                'about_description': 'ICT is one of the key operating sectors of Phuc Thanh Group. We provide modern, safe, and efficient technology infrastructure solutions, contributing to improving operational capacity and promoting digital transformation for businesses.',
+                'solutions_title': 'Technology Solutions', 
+                'solution_infra_title': 'Infrastructure Solutions', 
+                'solution_infra_desc': 'Providing solutions to optimize operation and infrastructure management.',
+                'solution_infra_list_1': 'Smart energy management solutions',
+                'solution_infra_list_2': 'Network and storage systems (Server/Storage)',
+                'solution_infra_list_3': 'Data security and safety',
+                'solution_infra_list_4': 'Large system integration',
+                'solution_dt_title': 'Digital Transformation 4.0 Solutions',
+                'solution_dt_desc': 'Developing products and services according to technology trends, helping businesses grow and expand.',
+                'solution_dt_list_1': 'Comprehensive E-commerce systems',
+                'solution_dt_list_2': 'Enterprise Resource Planning (ERP/CRM)',
+                'solution_dt_list_3': 'AI/Big Data applications',
+                'solution_dt_list_4': 'Digital transformation consulting and implementation',
+                'customers_title': 'Key Customers', 
+                'customers_desc': 'Successfully implemented many major projects for strategic customers.', 
+                'partners_title': 'Strategic Partners',
+                'footer_contact_title': 'Contact Information', 
+                'footer_address': 'Address: 3rd Floor - 51 Le Dai Hanh, Hai Ba Trung, Hanoi', 
+                'footer_phone': 'Phone: (024) 3976 3357', 
+                'footer_email': 'Email: info@phucthanhgroup.com',
+                'chat_header': 'Phuc Thanh ICT Chatbot', 
+                'chat_welcome': 'Welcome to Phuc Thanh ICT! How can I assist you with Infrastructure or Digital Transformation solutions?', 
+                'chat_placeholder': 'Enter your question...',
+                'chat_response': 'Thank you, our specialist will reply soon. Tel: (024) 3976 3357 Mail: info@phucthanhgroup.com'
+            },
+            'zh': {
+                'nav_main': '主页','nav_about': '关于我们', 'nav_solutions': '解决方案', 'nav_customers': '客户', 'nav_partners': '合作伙伴', 'hero_cta': '查看我们的解决方案',
+                'about_title': '关于福成ICT', 
+                'about_description': '信息通信技术（ICT）是福成集团的关键运营领域之一。我们提供现代化、安全高效的技术基础设施解决方案，助力企业提升运营能力并推动数字化转型。',
+                'solutions_title': '技术解决方案', 
+                'solution_infra_title': '基础设施解决方案', 
+                'solution_infra_desc': '提供优化运营和基础设施管理的解决方案。',
+                'solution_infra_list_1': '智能能源管理解决方案',
+                'solution_infra_list_2': '网络和存储系统 (服务器/存储)',
+                'solution_infra_list_3': '数据安全与保密',
+                'solution_infra_list_4': '大型系统集成',
+                'solution_dt_title': '数字化转型 4.0 解决方案',
+                'solution_dt_desc': '根据技术趋势开发产品和服务，帮助企业增长和扩大业务。',
+                'solution_dt_list_1': '全面的电子商务系统',
+                'solution_dt_list_2': '企业管理软件 (ERP/CRM)',
+                'solution_dt_list_3': '人工智能/大数据应用',
+                'solution_dt_list_4': '数字化转型咨询与实施',
+                'customers_title': '主要客户', 
+                'customers_desc': '已成功为国内外战略客户实施了许多重大项目。', 
+                'partners_title': '战略合作伙伴',
+                'footer_contact_title': '联系信息', 
+                'footer_address': '地址: 河内市二征夫人郡黎大行路51号3楼', 
+                'footer_phone': '电话: (024) 3976 3357', 
+                'footer_email': '邮箱: info@phucthanhgroup.com',
+                'chat_header': '福成 ICT 聊天机器人', 
+                'chat_welcome': '欢迎来到福成 ICT！您需要关于基础设施或数字化转型的帮助吗？', 
+                'chat_placeholder': '输入您的问题...',
+                'chat_response': '谢谢您，我们的专员将很快回复。电话: (024) 3976 3357 邮箱: info@phucthanhgroup.com'
+            },
+            'ko': {
+                'nav_main': '홈페이지', 'nav_about': '회사 소개', 'nav_solutions': '솔루션', 'nav_customers': '고객', 'nav_partners': '파트너', 'hero_cta': '솔루션 보기',
+                'about_title': '푹탄 ICT 소개', 
+                'about_description': 'ICT는 푹탄 그룹의 핵심 사업 분야 중 하나입니다. 우리는 현대적이고 안전하며 효율적인 기술 인프라 솔루션을 제공하여 기업의 운영 능력을 향상시키고 디지털 전환을 촉진하는 데 기여합니다.',
+                'solutions_title': '기술 솔루션', 
+                'solution_infra_title': '인프라 솔루션', 
+                'solution_infra_desc': '운영 최적화 및 인프라 관리를 위한 솔루션을 제공합니다.',
+                'solution_infra_list_1': '스마트 에너지 관리 솔루션',
+                'solution_infra_list_2': '네트워크 및 스토리지 시스템 (서버/스토리지)',
+                'solution_infra_list_3': '데이터 보안 및 안전',
+                'solution_infra_list_4': '대규모 시스템 통합',
+                'solution_dt_title': '디지털 전환 4.0 솔루션',
+                'solution_dt_desc': '기술 트렌드에 따른 제품 및 서비스를 개발하여 기업의 성장과 비즈니스 확장을 지원합니다.',
+                'solution_dt_list_1': '종합 이커머스 시스템',
+                'solution_dt_list_2': '기업 관리 소프트웨어 (ERP/CRM)',
+                'solution_dt_list_3': 'AI/빅데이터 기술 응용',
+                'solution_dt_list_4': '디지털 전환 컨설팅 및 구축',
+                'customers_title': '주요 고객', 
+                'customers_desc': '국내외 전략적 고객을 위해 다수의 주요 프로젝트를 성공적으로 수행했습니다.', 
+                'partners_title': '전략적 파트너',
+                'footer_contact_title': '연락 정보', 
+                'footer_address': '주소: 하노이 하이바쯩 레다이행 51번지 3층', 
+                'footer_phone': '전화: (024) 3976 3357', 
+                'footer_email': '이메일: info@phucthanhgroup.com',
+                'chat_header': '푹탄 ICT 챗봇', 
+                'chat_welcome': '푹탄 ICT에 오신 것을 환영합니다! 인프라 또는 디지털 전환 솔루션에 대해 도움이 필요하신가요?', 
+                'chat_placeholder': '질문을 입력하세요...',
+                'chat_response': '감사합니다. 담당자가 곧 답변해 드리겠습니다. 전화: (024) 3976 3357 이메일: info@phucthanhgroup.com'
+            }
+        };
+
+        let currentLang = 'vi';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            // Dịch toàn bộ các thẻ có data-lang-key
+            document.querySelectorAll('[data-lang-key]').forEach(el => {
+                const key = el.getAttribute('data-lang-key');
+                if (translations[lang][key]) el.textContent = translations[lang][key];
+            });
+
+            // Dịch Placeholder chatbot
+            document.getElementById('chatbot-input').placeholder = translations[lang].chat_placeholder;
+            
+            // Cập nhật lời chào chatbot
+            const chatMessages = document.getElementById('chatbot-messages');
+            chatMessages.innerHTML = `<div class="message bot-message">${translations[lang].chat_welcome}</div>`;
+
+            // Cập nhật trạng thái nút ngôn ngữ
+            document.querySelectorAll('.lang-button').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.lang-button[data-lang="${lang}"]`).classList.add('active');
+        }
+
+        // Chatbot Logic
+        document.getElementById('chatbot-toggle-btn').addEventListener('click', () => {
+            const win = document.getElementById('chatbot-window');
+            win.style.display = win.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        function sendMessage() {
+            const input = document.getElementById('chatbot-input');
+            const msg = input.value.trim();
+            if (!msg) return;
+
+            appendMsg('user', msg);
+            input.value = '';
+            
+            // Chatbot trả lời theo ngôn ngữ hiện tại
+            setTimeout(() => {
+                appendMsg('bot', translations[currentLang].chat_response);
+            }, 800);
+        }
+
+        function appendMsg(sender, text) {
+            const container = document.getElementById('chatbot-messages');
+            const div = document.createElement('div');
+            div.className = `message ${sender}-message`;
+            div.textContent = text;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        document.getElementById('chatbot-send-btn').addEventListener('click', sendMessage);
+        document.getElementById('chatbot-input').addEventListener('keypress', (e) => { if(e.key==='Enter') sendMessage(); });
+
+         document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
